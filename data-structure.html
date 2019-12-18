@@ -1,0 +1,55 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+    <div></div>
+</body>
+<script>
+
+let _items = Symbol();
+
+  class Stack {
+
+    constructor() {
+      this[_items] = [];
+    }
+    push(e) {
+      return this[_items].push(e);
+    }
+
+    pop() {
+      return this[_items].pop();
+    }
+
+    peek() {
+      return this[_items][this[_items].length - 1];
+    }
+
+    isEmpty() {
+      return this[_items].length == 0;
+    }
+
+    size() {
+      return this[_items].length;
+    }
+
+    clear() {
+      return this[_items] = [];
+    }
+
+    print() {
+      return console.log(this[_items].toString());
+    }
+  }
+let stack = new Stack();
+stack.push(5);
+stack.push(8);
+let objectSymbols = Object.getOwnPropertySymbols(stack);
+console.log(objectSymbols.length);
+console.log(objectSymbols);
+console.log(objectSymbols[0]);
+stack[objectSymbols[0]].push(1);
+stack.print();
+</script>
+</html>
