@@ -7,19 +7,22 @@
 </body>
 <script>
 
-const _items = Symbol();
+const items = WeakMap();
 
   class Stack {
-
     constructor() {
-      this[_items] = [];
+      items.set(this, []);
     }
+
     push(e) {
-      return this[_items].push(e);
+      let s = itmes.get(this);
+      s.push(e);
     }
 
     pop() {
-      return this[_items].pop();
+      let s = items.get(this);
+      let r = s.pop();
+      return r;
     }
 
     peek() {
@@ -45,11 +48,14 @@ const _items = Symbol();
 let stack = new Stack();
 stack.push(5);
 stack.push(8);
+
+25
 let objectSymbols = Object.getOwnPropertySymbols(stack);
 console.log(objectSymbols.length);
 console.log(objectSymbols);
 console.log(objectSymbols[0]);
 stack[objectSymbols[0]].push(1);
 stack.print();
+
 </script>
 </html>
