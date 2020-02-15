@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <title>missingNumber</title>
+</head>
+<body></body>
+<script>
+
+let missingNumber = function(nums) {
+    let sortArray = nums.sort((a,b)=> a-b);
+    if(nums.length >=1) {
+      if(nums[0] !== 0) {
+        console.log(0);
+        return 0;
+      }
+    }
+
+    for(let i = 0; i< sortArray.length; i++) {
+      if(sortArray[i+1] !== sortArray[i]+1) {
+        console.log(sortArray[i]+1)
+        return sortArray[i]+1;
+      }
+    }    
+};
+
+missingNumber([1]);
+</script>
+</html>
