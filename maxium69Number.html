@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+  <title>maximum69Number</title>
+</head>
+<body></body>
+<script>
+var maximum69Number  = function(num) {
+    if(num === 9999) return num;
+    
+    let arrayNums = num.toString().split('');
+    arrayNums[arrayNums.indexOf('6')] = '9';
+    
+    return arrayNums.join('');    
+};
+numberOfSteps(8);
+</script>
+</html>
