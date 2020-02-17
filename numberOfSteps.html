@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <title>numberOfSteps</title>
+</head>
+<body></body>
+<script>
+let numberOfSteps  = function(num) {
+  let counter = 0;
+  let calculator = (num) => {
+    if(num === 0) return count;
+    counter++;
+    
+    if(num % 2 === 0) {
+        return numberOfSteps(num/2);
+    }else {
+        return numberOfSteps(num-1)
+    }
+  }
+
+  return calculator(num);
+    
+};
+
+
+numberOfSteps(8);
+</script>
+</html>
